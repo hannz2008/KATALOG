@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="id"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Katalog Hampers Natal</title>
+<meta name="description" content="Katalog hampers Natal: pilihan rangkaian hampers lengkap dengan harga dan pemesanan lewat WhatsApp.">
+<meta property="og:title" content="Katalog Hampers Natal"><meta property="og:image" content="img/hampers-1.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap">
+<style id="pagecss">
+/* Layout: hero hijau pinus dengan salju, grid produk, blok cara pesan. Mode edit (hanya untuk yang boleh mengubah) mengganti teks dengan kolom isian. */
+:root{
+  --bg:#F5F8F6;
+  --surface:#FFFFFF;
+  --fg:#17261F;
+  --muted:#53665C;
+  --line:#D9E3DD;
+  --pine:#0F3D2E;
+  --pine-fg:#F3F7F4;
+  --red:#B3262D;
+  --red-fg:#FFFFFF;
+  --gold:#B8892B;
+  --gold-soft:#E9D9A8;
+  --field:#FFFFFF;
+  --display:'Fraunces',Georgia,'Times New Roman',serif;
+  --body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0C1713;--surface:#14241D;--fg:#EDF3EF;--muted:#9FB3A8;--line:#274034;
+    --pine:#0A2A20;--pine-fg:#F3F7F4;--red:#D9444B;--red-fg:#FFFFFF;--gold:#DDB75A;--gold-soft:#E9D9A8;--field:#0F1D17;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0C1713;--surface:#14241D;--fg:#EDF3EF;--muted:#9FB3A8;--line:#274034;
+  --pine:#0A2A20;--pine-fg:#F3F7F4;--red:#D9444B;--red-fg:#FFFFFF;--gold:#DDB75A;--gold-soft:#E9D9A8;--field:#0F1D17;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--pine) 0%,#12503C 100%);color:var(--pine-fg);
+  margin-top:calc(-1 * env(safe-area-inset-top,0px));padding-top:calc(env(safe-area-inset-top,0px) + 3rem);padding-bottom:3.5rem;border-bottom:6px solid var(--red)}
+.hero .wrap{position:relative;z-index:2}
+.eyebrow{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft);font-weight:600;margin:0 0 .9rem}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,7vw,4rem);line-height:1.05;margin:0 0 1rem;text-wrap:balance;max-width:14ch}
+.hero p.lead{max-width:52ch;margin:0 0 1.6rem;color:#DCE8E1;font-size:1.05rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.3rem;border-radius:999px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid transparent;cursor:pointer;font-family:inherit;line-height:1.2}
+.btn-red{background:var(--red);color:var(--red-fg)}
+.btn-red:hover{filter:brightness(1.08)}
+.btn-line{border-color:var(--gold-soft);color:var(--gold-soft);background:transparent}
+.btn-line:hover{background:rgba(233,217,168,.12)}
+.btn-sm{padding:.55rem 1.1rem;font-size:.88rem}
+.snow{position:absolute;inset:0;z-index:1;pointer-events:none}
+.flake{position:absolute;top:-10px;width:var(--s);height:var(--s);border-radius:50%;background:#fff;opacity:.75;animation:fall var(--d) linear var(--delay) infinite}
+@keyframes fall{to{transform:translate3d(var(--x),520px,0)}}
+@media (prefers-reduced-motion:reduce){.flake{animation:none;top:var(--t)}}
+
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem 2rem;padding-block:1.6rem}
+.strip div{min-width:0;font-size:.92rem;color:var(--muted)}
+.strip strong{display:block;color:var(--fg);font-family:var(--display);font-size:1.05rem;margin-bottom:.1rem}
+
+.sec-title{font-family:var(--display);font-size:clamp(1.7rem,4.5vw,2.4rem);margin:1.5rem 0 .4rem;text-wrap:balance}
+.sec-sub{color:var(--muted);margin:0 0 2rem;max-width:56ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:2rem}
+.item{min-width:0;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.item .ph{aspect-ratio:4/3;max-width:100%;background:var(--line);overflow:hidden}
+.item img{display:block;width:100%;height:100%;object-fit:cover}
+.item .body{padding:1.3rem 1.4rem 1.5rem;display:flex;flex-direction:column;gap:.7rem;flex:1}
+.tag{align-self:flex-start;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--red);border:1px solid var(--red);border-radius:999px;padding:.15rem .65rem}
+.item h3{font-family:var(--display);font-size:1.45rem;line-height:1.2;margin:0;text-wrap:balance}
+.item p{margin:0;color:var(--muted);font-size:.95rem}
+.isi{list-style:none;margin:0;padding:0;display:grid;gap:.3rem;font-size:.93rem}
+.isi li{padding-left:1.3rem;position:relative}
+.isi li::before{content:"";position:absolute;left:.15rem;top:.62em;width:.45rem;height:.45rem;background:var(--gold);transform:rotate(45deg)}
+.foot{margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.8rem;padding-top:.9rem;border-top:1px dashed var(--line)}
+.price{font-family:var(--display);font-weight:700;font-size:1.3rem}
+.price small{display:block;font-family:var(--body);font-weight:400;font-size:.75rem;color:var(--muted)}
+
+.order{margin-top:3.5rem;background:var(--pine);color:var(--pine-fg);border-top:6px solid var(--gold);padding-block:3rem}
+.order h2{font-family:var(--display);font-size:clamp(1.6rem,4.5vw,2.2rem);margin:0 0 1.5rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin:0 0 2rem;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;min-width:0;color:#DCE8E1;font-size:.95rem}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--red);color:#fff;font-weight:700;margin-bottom:.6rem}
+.steps strong{color:#fff;display:block}
+.contact{font-size:.92rem;color:#DCE8E1;margin:1.5rem 0 0}
+footer{padding-block:1.5rem 6rem;text-align:center;color:var(--muted);font-size:.85rem}
+
+/* Mode edit */
+.panel{background:var(--surface);border:2px dashed var(--gold);border-radius:14px;padding:1.2rem 1.4rem;margin-bottom:2rem}
+.panel h2{font-family:var(--display);font-size:1.25rem;margin:0 0 .3rem}
+.panel p{margin:0 0 1rem;color:var(--muted);font-size:.9rem}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:.8rem 1rem}
+.f{display:flex;flex-direction:column;gap:.25rem;min-width:0}
+.f.wide{grid-column:1/-1}
+.f label{font-size:.78rem;font-weight:600;color:var(--muted);letter-spacing:.04em}
+.f input,.f textarea{width:100%;font:inherit;font-size:.95rem;color:var(--fg);background:var(--field);border:1px solid var(--line);border-radius:8px;padding:.55rem .7rem}
+.f textarea{resize:vertical;min-height:6.5rem;line-height:1.5}
+.item.editing{border:2px dashed var(--gold)}
+.item.editing .body{gap:.8rem}
+.rp{display:flex;align-items:center;gap:.5rem}
+.rp span{font-weight:600}
+.adminbar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--pine);color:var(--pine-fg);border-top:3px solid var(--gold);
+  padding:.75rem max(16px,env(safe-area-inset-right,0px)) calc(.75rem + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.7rem}
+.adminbar .msg{font-size:.88rem;color:#DCE8E1;flex:1 1 220px;min-width:0}
+.adminbar .msg.err{color:#FFB4B4}
+.adminbar button:disabled{opacity:.6;cursor:default}
+</style>
+<style>body{margin:0}</style>
+</head><body>
+<div id="app"></div>
+
+<!-- DATA KATALOG: ubah nama toko, nomor WhatsApp, harga, dan isi paket di bagian JSON di bawah ini. -->
+<script type="application/json" id="state">{"toko":{"nama":"YAFURNI PLAZA PERABOT","whatsapp":"6285206426262","alamat":"JL.ISKANDAR MUDA NO.7 MEDAN","jam":"Setiap hari, 09.00 – 21.00"},"hampers":[{"foto":"img/hampers-1.jpg","tag":"Merah klasik","nama":"Hampers Lentera Santa","deskripsi":"Rangkaian merah hangat dengan lentera Santa dan rusa yang menjadi hiasan utama.","isi":["PAJANGAN LAMPU NATAL MG0948","PIRING KERAMIK 3166#","STORAGE GH-2881 + TUTUP (HB)","HANDUK (BP) KATUN CH SPORT 80X33"],"harga":750000},{"foto":"img/hampers-2.jpg","tag":"Merah hijau","nama":"Hampers Santa & Lampu Jalan","deskripsi":"Lentera berisi Santa, pohon cemara, dan anjing kecil di bawah lampu jalan.","isi":["PAJANGAN NATAL (BP) LENTERA XTY-18","PIRING KERAMIK 65216# KECIL","PIRING KERAMIK 6217# BESAR","STORAGE GH-2881 + TUTUP (HB)","HANDUK (BP) KATUN CH SPORT 80X33"],"harga":1200000},{"foto":"img/hampers-3.jpg","tag":"Putih emas","nama":"Hampers Jam Emas","deskripsi":"Rangkaian elegan berwarna putih dan emas untuk hadiah yang lebih formal.","isi":["JAM MEJA 5879 PUTIH (HB)","MANGKOK KERAMIK 58465# KECIL","STORAGE GH-2881 + TUTUP (HB)"],"harga":750000},{"foto":"img/hampers-4.jpg","tag":"Hijau emas","nama":"Hampers Jam Hijau & Handuk Beruang","deskripsi":"Jam meja hijau dipadukan dua handuk berbentuk beruang yang lucu.","isi":["JAM MEJA 5879 HIJAU (HB)","HANDUK (BP) KATUN CH SPORT 80X33","STORAGE GH-2881 + TUTUP (HB)"],"harga":450000}]}</script>
+
+<script id="main">
+(function(){
+  var RESET = ":root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}";
+  var state = JSON.parse(document.getElementById("state").textContent);
+  var app = document.getElementById("app");
+  var editing = false, canEdit = false, artifact = null, busy = false, message = "", isError = false;
+
+  function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+  function rupiah(n){return "Rp " + Number(n).toLocaleString("id-ID")}
+  function waLink(text){
+    var n = state.toko.whatsapp;
+    return n ? "https://wa.me/" + n + "?text=" + encodeURIComponent(text) : "";
+  }
+  function waShow(n){
+    if(!n) return "";
+    var d = n.indexOf("62")===0 ? "0"+n.slice(2) : n;
+    return d.replace(/(\d{4})(?=\d)/g,"$1-");
+  }
+  function field(id, label, value, opts){
+    opts = opts || {};
+    var input = opts.area
+      ? '<textarea id="'+id+'" rows="'+(opts.rows||6)+'">'+esc(value)+'</textarea>'
+      : '<input id="'+id+'" type="'+(opts.type||"text")+'" value="'+esc(value)+'"'+(opts.ph?' placeholder="'+esc(opts.ph)+'"':'')+(opts.mode?' inputmode="'+opts.mode+'"':'')+'>';
+    return '<div class="f'+(opts.wide?' wide':'')+'"><label for="'+id+'">'+esc(label)+'</label>'+input+'</div>';
+  }
+
+  function card(h, i){
+    if(editing){
+      return '<article class="item editing"><div class="ph"><img src="'+esc(h.foto)+'" alt="'+esc(h.nama)+'"></div><div class="body">'+
+        field("nama-"+i,"Nama hampers",h.nama)+
+        field("tag-"+i,"Label (misal: Merah klasik)",h.tag)+
+        field("desk-"+i,"Deskripsi singkat",h.deskripsi,{area:true,rows:3})+
+        field("isi-"+i,"Isi paket (satu barang per baris)",h.isi.join("\n"),{area:true,rows:6})+
+        '<div class="f"><label for="harga-'+i+'">Harga per paket</label><div class="rp"><span>Rp</span><input id="harga-'+i+'" type="number" min="0" step="1000" inputmode="numeric" value="'+(h.harga==null?"":esc(h.harga))+'" placeholder="Kosongkan jika belum ada harga"></div></div>'+
+        '</div></article>';
+    }
+    var link = waLink("Halo "+state.toko.nama+", saya ingin memesan " + h.nama + (h.harga!=null ? " (" + rupiah(h.harga) + ")" : ""));
+    var price = h.harga!=null ? esc(rupiah(h.harga)) + "<small>per paket</small>" : "Hubungi kami<small>untuk harga</small>";
+    var btn = link
+      ? '<a class="btn btn-red btn-sm" href="'+esc(link)+'" target="_blank" rel="noopener">Pesan</a>'
+      : '<a class="btn btn-red btn-sm" href="#pesan">Cara pesan</a>';
+    return '<article class="item"><div class="ph"><img src="'+esc(h.foto)+'" alt="'+esc(h.nama)+'" loading="lazy"></div>'+
+      '<div class="body"><span class="tag">'+esc(h.tag)+'</span><h3>'+esc(h.nama)+'</h3><p>'+esc(h.deskripsi)+'</p>'+
+      '<ul class="isi">'+h.isi.map(function(x){return "<li>"+esc(x)+"</li>"}).join("")+'</ul>'+
+      '<div class="foot"><div class="price">'+price+'</div>'+btn+'</div></div></article>';
+  }
+
+  function snowHTML(){
+    var out = "";
+    for(var i=0;i<34;i++){
+      var s = 3+Math.round(Math.random()*4);
+      out += '<span class="flake" style="left:'+(Math.random()*100).toFixed(1)+'%;--s:'+s+'px;--d:'+(7+Math.random()*8).toFixed(1)+'s;--delay:-'+(Math.random()*12).toFixed(1)+'s;--x:'+(Math.round(Math.random()*60)-30)+'px;--t:'+Math.round(Math.random()*90)+'%"></span>';
+    }
+    return out;
+  }
+
+  function render(){
+    var t = state.toko;
+    var mainWa = waLink("Halo "+t.nama+", saya ingin bertanya tentang hampers Natal");
+    var waBtn = mainWa
+      ? '<a class="btn btn-red" href="'+esc(mainWa)+'" target="_blank" rel="noopener">Pesan lewat WhatsApp</a>'
+      : '<a class="btn btn-red" href="#pesan">Nomor WhatsApp belum diisi</a>';
+    var panel = editing
+      ? '<section class="panel"><h2>Info toko</h2><p>Nomor WhatsApp boleh ditulis 0812… atau 62812…, nanti dirapikan otomatis.</p><div class="fields">'+
+          field("t-nama","Nama toko",t.nama)+
+          field("t-wa","Nomor WhatsApp",t.whatsapp?t.whatsapp:"",{ph:"contoh: 081234567890",mode:"tel"})+
+          field("t-alamat","Alamat",t.alamat)+
+          field("t-jam","Jam buka",t.jam)+
+        '</div></section>'
+      : "";
+    var bar = "";
+    if(canEdit){
+      bar = editing
+        ? '<div class="adminbar"><div class="msg'+(isError?' err':'')+'" role="status">'+esc(message||"Mode edit: ubah teks dan harga, lalu tekan Simpan.")+'</div>'+
+          '<button class="btn btn-line btn-sm" id="btnCancel" type="button"'+(busy?' disabled':'')+'>Batal</button>'+
+          '<button class="btn btn-red btn-sm" id="btnSave" type="button"'+(busy?' disabled':'')+'>'+(busy?'Menyimpan…':'Simpan perubahan')+'</button></div>'
+        : '<div class="adminbar"><div class="msg'+(isError?' err':'')+'" role="status">'+esc(message||"Anda bisa mengubah harga dan isi katalog ini.")+'</div>'+
+          '<button class="btn btn-red btn-sm" id="btnEdit" type="button">Edit katalog</button></div>';
+    }
+    app.innerHTML =
+      '<header class="hero"><div class="snow" aria-hidden="true">'+snowHTML()+'</div><div class="wrap">'+
+        '<p class="eyebrow">'+esc(t.nama)+' · Edisi Natal 2026</p>'+
+        '<h1>Hampers Natal untuk yang tersayang</h1>'+
+        '<p class="lead">Perlengkapan rumah pilihan yang dirangkai dalam wadah cantik dengan pita dan hiasan Natal. Siap diberikan sebagai kado untuk keluarga, kolega, dan pelanggan.</p>'+
+        '<div class="cta-row"><a class="btn btn-red" href="#katalog">Lihat katalog</a><a class="btn btn-line" href="#pesan">Cara pemesanan</a></div>'+
+      '</div></header>'+
+      '<div class="wrap">'+
+        '<div class="strip"><div><strong>Isi bisa disesuaikan</strong>Ganti warna pita, kartu ucapan, atau isi hampers.</div>'+
+        '<div><strong>Dirangkai rapi</strong>Setiap hampers sudah dibungkus dan siap diserahkan.</div>'+
+        '<div><strong>Pesan dalam jumlah banyak</strong>Tersedia untuk kebutuhan kantor dan acara.</div></div>'+
+        panel+
+        '<h2 class="sec-title" id="katalog">Pilihan hampers</h2>'+
+        '<p class="sec-sub">Empat rangkaian yang tersedia saat ini. Foto adalah contoh rangkaian, isi dan warna dapat berbeda sesuai stok.</p>'+
+        '<div class="grid">'+state.hampers.map(card).join("")+'</div>'+
+      '</div>'+
+      '<section class="order" id="pesan"><div class="wrap"><h2>Cara memesan</h2><ol class="steps">'+
+        '<li><strong>Pilih hampers</strong>Pilih rangkaian di katalog dan tentukan jumlahnya.</li>'+
+        '<li><strong>Hubungi kami</strong>Kirim nama rangkaian lewat WhatsApp untuk cek stok.</li>'+
+        '<li><strong>Konfirmasi &amp; bayar</strong>Kami kirim rincian pesanan dan nomor pembayaran.</li>'+
+        '<li><strong>Ambil atau kirim</strong>Ambil di toko atau minta diantar ke alamat tujuan.</li></ol>'+
+        waBtn+'<p class="contact">'+(mainWa?'WhatsApp: <a href="'+esc(mainWa)+'" target="_blank" rel="noopener"><strong>'+esc(waShow(t.whatsapp))+'</strong></a><br>':'')+esc(t.alamat)+' · '+esc(t.jam)+'</p></div></section>'+
+      '<footer class="wrap">Katalog Hampers Natal 2026</footer>'+bar;
+    bind();
+  }
+
+  function val(id){var e=document.getElementById(id);return e?e.value:""}
+  function collect(){
+    var wa = val("t-wa").replace(/\D/g,"");
+    if(wa.charAt(0)==="0") wa = "62" + wa.slice(1);
+    var next = {toko:{nama:val("t-nama").trim()||"Toko Anda",whatsapp:wa,alamat:val("t-alamat").trim(),jam:val("t-jam").trim()},hampers:[]};
+    state.hampers.forEach(function(h,i){
+      var hv = val("harga-"+i).trim();
+      var n = hv==="" ? null : Math.max(0, Math.round(Number(hv)));
+      next.hampers.push({
+        foto:h.foto,
+        tag:val("tag-"+i).trim(),
+        nama:val("nama-"+i).trim()||h.nama,
+        deskripsi:val("desk-"+i).trim(),
+        isi:val("isi-"+i).split("\n").map(function(x){return x.trim()}).filter(Boolean),
+        harga:(n==null||isNaN(n))?null:n
+      });
+    });
+    return next;
+  }
+
+  function buildDoc(s){
+    var q = function(sel){var e=document.querySelector(sel);return e?e.outerHTML:""};
+    var json = JSON.stringify(s).replace(/</g,"\\u003c");
+    var open = "<scr"+"ipt", close = "</scr"+"ipt>";
+    return "<!doctype html><html><head><meta charset=utf8><meta name=viewport content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><style>"+RESET+"</style></head><body>"+
+      q("title")+q('meta[name="claude:viewport-fit-sides"]')+q('link[href*="fonts.googleapis.com"]')+q("style#pagecss")+
+      '<div id="app"></div>'+
+      open+' type="application/json" id="state">'+json+close+
+      open+' id="main">'+document.getElementById("main").textContent+close+
+      "</body></html>";
+  }
+
+  function save(){
+    if(busy) return;
+    var next = collect();
+    busy = true; isError = false; message = "Menyimpan…";
+    state = next; render();
+    artifact.publish(buildDoc(next)).catch(function(err){
+      busy = false; isError = true;
+      var code = err && err.code;
+      if(code==="conflict"){ message = "Ada versi yang lebih baru. Halaman akan dimuat ulang, ulangi perubahan Anda."; }
+      else if(code==="not_writer"||code==="not_granted"||code==="consent_required"){ canEdit = false; editing = false; message = ""; }
+      else if(code==="rate_limited"){ message = "Terlalu sering menyimpan. Tunggu sebentar lalu coba lagi."; }
+      else { message = "Gagal menyimpan. Perubahan Anda masih ada di layar, coba lagi."; }
+      render();
+    });
+  }
+
+  function bind(){
+    var e = document.getElementById("btnEdit");
+    if(e) e.onclick = function(){editing = true; message = ""; render(); window.scrollTo(0,0)};
+    var c = document.getElementById("btnCancel");
+    if(c) c.onclick = function(){state = JSON.parse(document.getElementById("state").textContent); editing = false; message = ""; isError = false; render()};
+    var s = document.getElementById("btnSave");
+    if(s) s.onclick = save;
+  }
+
+  render();
+
+  if(window.claude && window.claude.use){
+    Promise.all([window.claude.use("artifact"), window.claude.use("user")]).then(function(r){
+      artifact = r[0];
+      if(!artifact || !r[1]) return;
+      return r[1].canEdit().then(function(ok){ if(ok){ canEdit = true; render(); } });
+    }).catch(function(){});
+  }
+})();
+</script>
+</body></html>

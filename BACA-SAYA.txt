@@ -1,0 +1,15 @@
+Katalog Hampers Natal - siap hosting
+
+Isi folder:
+  index.html   halaman katalog
+  img/         foto hampers
+
+Cara pasang:
+  Hosting biasa (cPanel/hPanel): upload isi folder ini ke public_html, lalu buka domain Anda.
+  Netlify Drop (gratis): buka app.netlify.com/drop, tarik folder katalog-hampers ke halaman itu.
+  GitHub Pages / Cloudflare Pages: upload folder ini sebagai repository.
+
+Mengubah harga, nomor WhatsApp, atau isi paket:
+  Buka index.html dengan teks editor, cari tulisan 'DATA KATALOG', lalu ubah angka dan teks di dalamnya.
+  Nomor WhatsApp ditulis tanpa tanda plus, diawali 62 (contoh 6285206426262).
+  Tombol Edit katalog hanya aktif di versi Claude, tidak di hosting.
